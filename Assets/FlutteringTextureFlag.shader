@@ -50,7 +50,8 @@
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                o.shadeColor = 0.5 * sin(v.vertex.x + _Time) + 0.5;
+                float wave = 0.5 * sin(v.vertex.x + _Time * _XWaveSpeed) + 0.5;
+                o.shadeColor = wave;
                 return o;
             }
 
